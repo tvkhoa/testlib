@@ -5,7 +5,15 @@ const reducerPath = 'eh/app';
 const names = {
   content: {
     type: 'string',
-    defaultValue: 'Content',
+    defaultValue: 'react-tippy',
+  },
+  username: {
+    type: 'string',
+    defaultValue: 'React-tippy',
+  },
+  title: {
+    type: 'string',
+    defaultValue: 'tooltip lib',
   },
 };
 
@@ -18,4 +26,9 @@ export const {
   names,
 });
 
+export const setUsernameAC = actionCreatorFactory('username');
+export const setTitleAC = actionCreatorFactory('title');
+
 export const contentSelector = selectorFactory('content');
+export const usernameSelector = selectorFactory('username');
+export const titleSelector = selectorFactory('title');

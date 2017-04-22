@@ -1,47 +1,9 @@
 import { createStore as createReduxStore, applyMiddleware, compose } from 'redux';
 import { compact } from 'lodash';
 import thunk from 'redux-thunk';
-import { createEpicMiddleware } from 'redux-observable';
-import { middleware as apiCallMiddleware } from 'redux-api-call';
 import { routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import { rootReducer } from './rootReducer';
-import rootEpic from './rootEpic';
-
-const epicMiddleware = createEpicMiddleware(rootEpic);
-
-const fetchAdapter = ({
-  endpoint,
-  headers,
-  ...others
-}) => {
-  const newHeader = {
-    accept: 'application/json',
-    'Content-Type': 'application/json',
-    ...(headers || {}),
-  };
-  return fetch(endpoint, {
-    ...others,
-    headers: newHeader,
-    mode: 'cors',
-  }).then(res => Promise.resolve({
-    ok: res.ok,
-    json() {
-      return res.json().then(
-        (json) => {
-          if (res.ok) {
-            return json;
-          }
-          return {
-            status: res.status,
-            ...json,
-          };
-        },
-        err => new Error(`Error when parsing ${err}`),
-      );
-    },
-  }));
-};
 
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory();
@@ -49,8 +11,6 @@ const history = createHistory();
 const enhancers = compact([
   applyMiddleware(
     thunk,
-    apiCallMiddleware(fetchAdapter),
-    epicMiddleware,
     routerMiddleware(history),
   ),
   // Redux Dev Tools store enhancer.
