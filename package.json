@@ -2,6 +2,7 @@
   "name": "eh-ui-light",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://tvkhoa.github.io/testlib",
   "dependencies": {
     "history": "^4.6.1",
     "hoothoot": "^0.0.8",
@@ -12,12 +13,12 @@
     "react-redux": "^5.0.3",
     "react-router": "^4.0.0",
     "react-router-redux": "next",
-    "react-tippy": "0.6.1-3",
+    "react-tippy": "0.7.0",
     "recompose": "^0.22.0",
     "redux": "^3.6.0",
     "redux-api-call": "^0.3.14",
     "redux-observable": "^0.14.1",
-    "redux-state-action": "^1.0.5",
+    "redux-state-action": "1.0.7",
     "redux-thunk": "^2.2.0",
     "rxjs": "^5.2.0"
   },
@@ -29,6 +30,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.10.3",
+    "gh-pages": "^0.12.0",
     "jest-enzyme": "2.1.2",
     "react-addons-test-utils": "^15.4.2",
     "react-scripts": "0.9.5"
@@ -37,6 +39,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   }
 }
