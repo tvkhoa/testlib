@@ -19,7 +19,7 @@ ReactDOM.render(
     <ConnectedRouter history={history}>
       <div>
         <Route exact path="/" component={App} />
-        <Route path="/react-tippy" component={App} />
+        <Route exact path="/testlib" component={App} />
       </div>
     </ConnectedRouter>
   </Provider>,

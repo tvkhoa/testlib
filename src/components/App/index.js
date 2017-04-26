@@ -60,6 +60,8 @@ const App = ({
   title,
   setUsername,
   setTitle,
+  open,
+  setIsOpen,
 }) => (
   <div className="App">
     <div className="enter App-header text-center">
@@ -69,7 +71,7 @@ const App = ({
         <h2 className="hero-subheading">A lightweight tooltip for React.</h2>
         <div className="d-flex justify-content-center align-items-center flex-wrap">
           <small className="hero-badge">
-            <span>v0.6.1</span>
+            <span>v0.10.0</span>
           </small>
           <small className="hero-badge">
             <a href="https://popper.js.org" target="_blank" rel="noopener noreferrer" className="hero-link">
@@ -107,6 +109,9 @@ const App = ({
             <p>
               It uses React DOM to render tooltip content.
               Therefore, you can fully use it in your React project without doubt
+            </p>
+            <p>
+              You can show/hide it manually by using `open` and `onRequestClose` prop
             </p>
             <p>
               It is an enhancement of Tippy.js for using in React.
@@ -344,6 +349,24 @@ const App = ({
             </div>
           </section>
 
+          <section id="custom-htmls" className="text-left">
+            <h2 className="heading-top light">Show/ hide manually</h2>
+            <div className="button-showcase d-flex flex-wrap">
+              <Tooltip
+                title="I'm a remote tooltip"
+                interactive
+                open={open}
+                onRequestClose={() => setIsOpen(false)}
+              >
+                <button className="btn mt-0 mb-0">Dump</button>
+              </Tooltip>
+              <div>
+                <button className="btn mt-0 mb-0" onClick={() => setIsOpen(true)}>
+                  I am smart. Click me
+                </button>
+              </div>
+            </div>
+          </section>
           <section id="getting-started">
             <h2 className="heading-top light">Getting started</h2>
             <p>Using npm</p>
@@ -425,6 +448,7 @@ const mapDispatchToProps = (dispatch) => ({
 const enhance = compose(
   connect(mapStateToProps, mapDispatchToProps),
   withState('enabled', 'setEnabled', true),
+  withState('open', 'setIsOpen', undefined),
 );
 
 export default enhance(App);
