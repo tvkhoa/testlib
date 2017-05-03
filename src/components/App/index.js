@@ -71,7 +71,7 @@ const App = ({
         <h2 className="hero-subheading">A lightweight tooltip for React.</h2>
         <div className="d-flex justify-content-center align-items-center flex-wrap">
           <small className="hero-badge">
-            <span>v0.10.0</span>
+            <span>v0.11.1</span>
           </small>
           <small className="hero-badge">
             <a href="https://popper.js.org" target="_blank" rel="noopener noreferrer" className="hero-link">
