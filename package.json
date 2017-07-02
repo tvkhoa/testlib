@@ -13,7 +13,7 @@
     "react-redux": "^5.0.3",
     "react-router": "^4.0.0",
     "react-router-redux": "next",
-    "react-tippy": "0.10.0",
+    "react-tippy": "1.0.1",
     "react-velonic": "^0.2.0",
     "recompose": "^0.22.0",
     "redux": "^3.6.0",

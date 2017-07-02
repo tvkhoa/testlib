@@ -71,7 +71,7 @@ const App = ({
         <h2 className="hero-subheading">A lightweight tooltip for React.</h2>
         <div className="d-flex justify-content-center align-items-center flex-wrap">
           <small className="hero-badge">
-            <span>v0.11.1</span>
+            <span>v1.0.1</span>
           </small>
           <small className="hero-badge">
             <a href="https://popper.js.org" target="_blank" rel="noopener noreferrer" className="hero-link">
@@ -424,6 +424,40 @@ const App = ({
               are from tippy.js ( powered by Bootstrap )
             </p>
           </section>
+
+          <section id="browser">
+            <h2 className="heading-top light">Browser support</h2>
+            <p>
+              Tippy gracefully degrades on older browsers (and with JavaScript disabled)
+              by using the browser&#8217;s default title tooltip.
+              If you want to support older browsers, please add <kbd>polyfill</kbd> by yourself
+            </p>
+            <br />
+            <h2 className="heading-top light">Supported browsers</h2>
+            <p>
+              Browsers which support <kbd>requestAnimationFrame</kbd>. See
+              <a href="https://caniuse.com/#search=requestAnimationFrame" target="_blank" rel="noopener noreferrer" className="alert-link">
+                <span> caniuse</span>. &nbsp;
+              </a>
+              If your audience has low Opera Mini usage (common in western countries),
+              then support should be &gt; 96%.
+            </p>
+            <br />
+            <h2 className="heading-top light">Touch devices</h2>
+            <p>
+              Tippy works on touch devices almost the same as on desktop/mouse devices.
+              However on iOS devices, in order for tooltips to close when tapping anywhere
+              on the body and to trigger hover events on non-clickable elements,
+              a <kbd>.tippy-touch &#123; cursor: pointer !important; &#125;</kbd>
+              class is added to the body.
+            </p>
+            <br />
+            <h2 className="heading-top light">Accessibility</h2>
+            <p>
+              Tooltips have ARIA labelling to ensure accessibility.
+            </p>
+          </section>
+
           <section id="license">
             <h2 className="heading-top light">License</h2>
             <p>MIT. Also check Popper.js{'\''} license.</p>
